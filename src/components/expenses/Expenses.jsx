@@ -6,8 +6,8 @@ import { useState } from "react";
 import ExpensesList from "./expenses_list/ExpensesList";
 
 const Expenses = (props) => {
-  const { expenses = [] } = props;
-  const [filterYear, setFilterYear] = useState('2019');
+  const { expenses = [] , isListLoading = false} = props;
+  const [filterYear, setFilterYear] = useState('2021');
 
   const onChangeFilterHandler = (selected_year) => {
     setFilterYear(selected_year);
@@ -26,7 +26,7 @@ const Expenses = (props) => {
             selectedValue={filterYear}
             onChangeFilterHandler={onChangeFilterHandler} 
           />
-        <ExpensesList items={filter_expenses} />
+        <ExpensesList items={filter_expenses} isListLoading={isListLoading}/>
     </Card>
   )
 }

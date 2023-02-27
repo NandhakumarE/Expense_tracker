@@ -54,3 +54,7 @@
       padding: 0.5rem 1.5rem;
     }
   }
+
+  .loaderSkeleton {
+    margin: .5rem 0;
+  }
